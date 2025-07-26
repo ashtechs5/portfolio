@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASH TECH - Innovative Software Solutions</title>
+    <link rel="icon" href="https://cdn.jsdelivr.net/gh/anjumshehzad1/assets@main/Assets/logo.jpg" type="image/png">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-color: #6366f1;
+            --secondary-color: #8b5cf6;
+            --accent-color: #06b6d4;
+            --dark-bg: #0f0f23;
+            --darker-bg: #0a0a1a;
+            --text-light: #e2e8f0;
+            --text-muted: #94a3b8;
+            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --glass-bg: rgba(255, 255, 255, 0.1);
+            --glass-border: rgba(255, 255, 255, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--dark-bg);
+            color: var(--text-light);
+            overflow-x: hidden;
+        }
+
+        /* Animated Background */
+        .animated-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: var(--dark-bg);
+        }
+
+        .floating-shapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .shape {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            opacity: 0.1;
+            animation: float 20s infinite linear;
+        }
+
+        .shape:nth-child(1) {
+            width: 80px;
+            height: 80px;
+            left: 10%;
+            animation-delay: -2s;
+        }
+
+        .shape:nth-child(2) {
+            width: 120px;
+            height: 120px;
+            left: 20%;
+            animation-delay: -4s;
+        }
+
+        .shape:nth-child(3) {
+            width: 60px;
+            height: 60px;
+            left: 70%;
+            animation-delay: -6s;
+        }
+
+        .shape:nth-child(4) {
+            width: 100px;
+            height: 100px;
+            left: 80%;
+            animation-delay: -8s;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(100vh) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-20px) rotate(180deg);
+            }
+        }
+
+        /* Glass Morphism Effect */
+        .glass {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+        }
+
+        /* Navigation */
+        .navbar {
+            background: rgba(15, 15, 35, 0.95) !important;
+            backdrop-filter: blur(20px);
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-brand {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 1.8rem;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .navbar-nav .nav-link {
+            color: var(--text-light) !important;
+            font-weight: 500;
+            margin: 0 0.5rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: var(--primary-color) !important;
+            transform: translateY(-2px);
+        }
+
+        .navbar-nav .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 50%;
+            background: var(--gradient-1);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .navbar-toggler {
+            border: none;
+            padding: 4px 8px;
+            background: var(--glass-bg);
+            border-radius: 5px;
+        }
+
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+
+        .logo-img {
+            height: 60px;
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .hero-content {
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero .subtitle {
+            font-size: 1.3rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .btn-primary-custom {
+            background: var(--gradient-1);
+            border: none;
+            padding: 15px 40px;
+            font-weight: 600;
+            border-radius: 50px;
+            color: white;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(102, 102, 241, 0.3);
+        }
+
+        .btn-primary-custom:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(102, 102, 241, 0.4);
+            color: white;
+        }
+
+        /* Section Styling */
+        .section {
+            padding: 100px 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 3rem;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Service Cards */
+        .service-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 1rem;
+            transition: all 0.3s ease;
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            border-color: var(--primary-color);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+
+        .service-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-light);
+        }
+
+        .service-description {
+            color: var(--text-muted);
+            line-height: 1.6;
+            flex-grow: 1;
+        }
+
+        /* Horizontal Scroll Container */
+        .scroll-container {
+            display: flex;
+            overflow-x: auto;
+            padding: 20px 0;
+            gap: 20px;
+            scroll-behavior: smooth;
+        }
+
+        .scroll-container::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .scroll-container::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+
+        .scroll-container::-webkit-scrollbar-thumb {
+            background: var(--gradient-1);
+            border-radius: 10px;
+        }
+
+        .scroll-item {
+            flex: 0 0 350px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .scroll-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+        .project-icon {
+            width: 100%;
+            height: 200px;
+            background: var(--gradient-2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            border-radius: 20px 20px 0 0;
+            overflow: hidden;
+            position: relative;
+            background: var(--gradient-2);
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.3s ease;
+        }
+
+        .project-image:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Fallback icon when no image is provided */
+        .project-image .fallback-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 3rem;
+            color: white;
+            display: none;
+        }
+
+        .project-image:not(.has-image) .fallback-icon {
+            display: block;
+        }
+
+        .project-image:not(.has-image) {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--gradient-2);
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-light);
+        }
+
+        .project-description {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        /* Domain Logos */
+        .domain-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .domain-item {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 15px;
+            padding: 2rem 1rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .domain-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .domain-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: rgb(104, 189, 189);
+            background-clip: text;
+        }
+
+        .domain-name {
+            font-weight: 600;
+            color: var(--text-light);
+        }
+
+        /* Contact Options */
+        .contact-options {
+            margin-top: 2rem;
+        }
+
+        .contact-card {
+            display: block;
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            text-decoration: none;
+            color: var(--text-light);
+            transition: all 0.3s ease;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            transition: all 0.3s ease;
+            z-index: -1;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            color: white;
+        }
+
+        .contact-card:hover::before {
+            left: 0;
+        }
+
+        .contact-card.linkedin::before {
+            background: linear-gradient(135deg, #0077b5, #005885);
+        }
+
+        .contact-card.call::before {
+            background: linear-gradient(135deg, #25d366, #128c7e);
+        }
+
+        .contact-card.whatsapp::before {
+            background: linear-gradient(135deg, #25d366, #128c7e);
+        }
+
+        .contact-card.gmail::before {
+            background: linear-gradient(135deg, #ea4335, #d33b2c);
+        }
+
+        .contact-card:hover {
+            border-color: transparent;
+        }
+
+        .contact-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            transition: all 0.3s ease;
+        }
+
+        .contact-card:hover .contact-icon {
+            color: white;
+            -webkit-text-fill-color: white;
+        }
+
+        .contact-card h4 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-light);
+            transition: all 0.3s ease;
+        }
+
+        .contact-card:hover h4 {
+            color: white;
+        }
+
+        .contact-card p {
+            color: var(--text-muted);
+            margin: 0;
+            transition: all 0.3s ease;
+        }
+
+        .contact-card:hover p {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--darker-bg);
+            padding: 3rem 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .business-card {
+            height: 230px;
+            width: 100%;
+        }
+
+        .logo-img-footer {
+            height: 100px;
+            width: 20%;
+        }
+
+        .social-links a {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 50%;
+            color: var(--text-light);
+            text-align: center;
+            line-height: 48px;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+                margin-top: 150px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .scroll-item {
+                flex: 0 0 280px;
+            }
+
+            .domain-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+
+            .navbar-nav {
+                background: var(--darker-bg);
+                border-radius: 10px;
+                padding: 1rem;
+                margin-top: 1rem;
+            }
+
+            .navbar-nav .nav-link {
+                padding: 0.5rem 0;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .navbar-nav .nav-link:last-child {
+                border-bottom: none;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .domain-grid {
+                grid-template-columns: 1fr;
+            }
+
+
+            .hero h1 {
+                font-size: 2rem;
+
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (min-width: 600px) and (max-width: 1024px) {
+
+            .domain-grid {
+                grid-template-columns: 1fr;
+            }
+
+
+            .hero h1 {
+                font-size: 2rem;
+                margin-top: 100px;
+
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Animation Classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.8s ease;
+        }
+
+        .slide-in-left.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.8s ease;
+        }
+
+        .slide-in-right.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Animated Background -->
+    <div class="animated-bg">
+        <div class="floating-shapes">
+            <div class="shape"></div>
+            <div class="shape"></div>
+            <div class="shape"></div>
+            <div class="shape"></div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home"><img class="logo-img" src="https://cdn.jsdelivr.net/gh/anjumshehzad1/assets@main/Assets/logo.jpg" alt="Logo"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home" onclick="closeNavbar()">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about" onclick="closeNavbar()">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services" onclick="closeNavbar()">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects" onclick="closeNavbar()">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#domains" onclick="closeNavbar()">Domains</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact" onclick="closeNavbar()">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="hero-content">
+                        <h1>Welcome to ASH TECH</h1>
+                        <p class="subtitle">We craft innovative software solutions that transform your digital dreams
+                            into reality. From cutting-edge AI to stunning web experiences, we're your gateway to the
+                            future.</p>
+                        <a href="#projects" class="btn-primary-custom">Discover Our Magic</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-visual">
+                        <div
+                            style="text-align: center; font-size: 15rem; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About ASH TECH</h2>
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="glass p-4">
+                        <h3 class="mb-3" style="color: var(--primary-color);">Our Vision</h3>
+                        <p>At ASH TECH, we believe in the power of technology to transform businesses and lives. We're
+                            not just developers, we're digital architects crafting the future, one line of code at a
+                            time.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="glass p-4">
+                        <h3 class="mb-3" style="color: var(--secondary-color);">Our Mission</h3>
+                        <p>To deliver exceptional software solutions that exceed expectations, combining technical
+                            excellence with creative innovation to help our clients achieve their digital ambitions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="scroll-container">
+                <div class="scroll-item">
+                    <div class="project-icon"><i class="fas fa-globe"></i></div>
+                    <div class="project-content">
+                        <h5 class="project-title">Web Development</h5>
+                        <p class="project-description">Modern, responsive websites that captivate users and drive
+                            results. From simple landing pages to complex web applications.</p>
+                    </div>
+                </div>
+                <div class="scroll-item">
+                    <div class="project-icon"><i class="fas fa-eye"></i></div>
+                    <div class="project-content">
+                        <h5 class="project-title">Computer Vision</h5>
+                        <p class="project-description">Advanced image processing and AI-powered visual recognition
+                            systems that see and understand the world.</p>
+                    </div>
+                </div>
+                <div class="scroll-item">
+                    <div class="project-icon"><i class="fab fa-react"></i></div>
+                    <div class="project-content">
+                        <h5 class="project-title">MERN Stack</h5>
+                        <p class="project-description">Full-stack JavaScript applications using MongoDB, Express, React,
+                            and Node.js for maximum performance.</p>
+                    </div>
+                </div>
+                <div class="scroll-item">
+                    <div class="project-icon"><i class="fas fa-brain"></i></div>
+                    <div class="project-content">
+                        <h5 class="project-title">AI/ML Solutions</h5>
+                        <p class="project-description">Intelligent systems that learn, adapt, and provide insights to
+                            give your business a competitive edge.</p>
+                    </div>
+                </div>
+                <div class="scroll-item">
+                    <div class="project-icon"><i class="fas fa-link"></i></div>
+                    <div class="project-content">
+                        <h5 class="project-title">Blockchain Solutions</h5>
+                        <p class="project-description">Secure, decentralized applications and smart contracts for the
+                            future of digital transactions.</p>
+                    </div>
+                </div>
+                <div class="scroll-item">
+                    <div class="project-icon"><i class="fas fa-code"></i></div>
+                    <div class="project-content">
+                        <h5 class="project-title">API Integration</h5>
+                        <p class="project-description">Secure API Integraions using differnet techs including FastAPI,
+                            WebhookAPI, RestfulAPI, and more.</p>
+                    </div>
+                </div>
+
+                <div class="scroll-item">
+                    <div class="project-icon"><i class="fab fa-shopify"></i></div>
+                    <div class="project-content">
+                        <h5 class="project-title">Shopify Development</h5>
+                        <p class="project-description">Custom e-commerce solutions that convert visitors into customers
+                            with seamless shopping experiences.</p>
+                    </div>
+                </div>
+                <div class="scroll-item">
+                    <div class="project-icon"><i class="fab fa-wordpress"></i></div>
+                    <div class="project-content">
+                        <h5 class="project-title">WordPress Solutions</h5>
+                        <p class="project-description">Powerful, scalable WordPress websites with custom themes and
+                            plugins tailored to your needs.</p>
+                    </div>
+                </div>
+
+                <div class="scroll-item">
+                    <div class="project-icon"><i class="fas fa-server"></i></div>
+                    <div class="project-content">
+                        <h5 class="project-title">Nest.js Development</h5>
+                        <p class="project-description">Enterprise-grade Node.js applications with TypeScript, built for
+                            scalability and maintainability.</p>
+                    </div>
+                </div>
+                <div class="scroll-item">
+                    <div class="project-icon"><i class="fas fa-palette"></i></div>
+                    <div class="project-content">
+                        <h5 class="project-title">UI/UX Design</h5>
+                        <p class="project-description">User-centered designs that create meaningful experiences and
+                            drive engagement across all platforms.</p>
+                    </div>
+                </div>
+
+                <div class="scroll-item">
+                    <div class="project-icon"><i class="fas fa-paint-brush"></i></div>
+                    <div class="project-content">
+                        <h5 class="project-title">Graphic Design</h5>
+                        <p class="project-description">Visual identity and branding solutions that communicate your
+                            message with stunning creativity.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">Our Projects</h2>
+            <div class="scroll-container">
+                <div class="scroll-item">
+                    <div class="project-image"><img src="https://cdn.jsdelivr.net/gh/anjumshehzad1/assets@main/Assets/Blockchain.jpg" alt="Reload"></div>
+                    <div class="project-content">
+                        <h5 class="project-title">Blockchain Project</h5>
+                        <p class="project-description">A fully-featured online bus seat reservation system with
+                            blockchain and fingerprint integration with multiple modules.</p>
+                    </div>
+                </div>
+                <div class="scroll-item">
+                    <div class="project-image"><img src="https://cdn.jsdelivr.net/gh/anjumshehzad1/assets@main/Assets/Modative.png" alt="Reload"></div>
+                    <div class="project-content">
+                        <h5 class="project-title">Modative Website</h5>
+                        <p class="project-description">Fully responsive website for an architectural company showcasing
+                            their services.</p>
+                    </div>
+                </div>
+                <div class="scroll-item">
+                    <div class="project-image"><img src="https://cdn.jsdelivr.net/gh/anjumshehzad1/assets@main/Assets/Ecommerce-Wordpress.jpg" alt="Reload"></div>
+                    <div class="project-content">
+                        <h5 class="project-title">E-Commerce - Wordpress</h5>
+                        <p class="project-description">A fully-featured online marketplace with advanced filtering,
+                            online payments, and admin dashboard.</p>
+                    </div>
+                </div>
+                <div class="scroll-item">
+                    <div class="project-image"><img src="https://cdn.jsdelivr.net/gh/anjumshehzad1/assets@main/Assets/Computer-Vison.jpg" alt="Reload"></div>
+                    <div class="project-content">
+                        <h5 class="project-title">Automatic LPR (ALPR)</h5>
+                        <p class="project-description">Computer vision system for detection and recognition of licensed
+                            plate in real-time.</p>
+                    </div>
+                </div>
+                <div class="scroll-item">
+                    <div class="project-image"><img src="https://cdn.jsdelivr.net/gh/anjumshehzad1/assets@main/Assets/Sql-Injection.webp" alt="Reload"></div>
+                    <div class="project-content">
+                        <h5 class="project-title">SQL-Injection Detection System</h5>
+                        <p class="project-description">Real-time machine learning detector with interactive UI and
+                            predictive analytics.</p>
+                    </div>
+                </div>
+
+                <div class="scroll-item">
+                    <div class="project-image"><img src="https://cdn.jsdelivr.net/gh/anjumshehzad1/assets@main/Assets/Ddos-attack.jpg" alt="Reload"></div>
+                    <div class="project-content">
+                        <h5 class="project-title">DDOS Attack Detection System</h5>
+                        <p class="project-description">Machine learning system which is CLI-Based with predictive
+                            analytics.</p>
+                    </div>
+                </div>
+                <div class="scroll-item">
+                    <div class="project-image"><img src="https://cdn.jsdelivr.net/gh/anjumshehzad1/assets@main/Assets/Fake-News.jpg" alt="Reload"></div>
+                    <div class="project-content">
+                        <h5 class="project-title">Fake News Detection System</h5>
+                        <p class="project-description">Real-time artifical intelligence platform with interactive UI and
+                            predictive analytics.</p>
+                    </div>
+                </div>
+                <div class="scroll-item">
+                    <div class="project-image"><img src="https://cdn.jsdelivr.net/gh/anjumshehzad1/assets@main/Assets/Kidney-Stone.jpg" alt="Reload"></div>
+                    <div class="project-content">
+                        <h5 class="project-title">Kidney Stone Detection System</h5>
+                        <p class="project-description">Real-time vast artifical intelligence platform for kidney stone
+                            prediction with interactive UI, predictive analytics and multiple modules.</p>
+                    </div>
+                </div>
+                <div class="scroll-item">
+                    <div class="project-image"><img src="https://cdn.jsdelivr.net/gh/anjumshehzad1/assets@main/Assets/Ecommerce.jpg" alt="Reload"></div>
+                    <div class="project-content">
+                        <h5 class="project-title">E-Commerce - PHP</h5>
+                        <p class="project-description">A fully-featured online marketplace with advanced filtering,
+                            interactive UI and admin dashboard.</p>
+                    </div>
+                </div>
+
+                <div class="scroll-item">
+                    <div class="project-image"><img
+                            src="https://cdn.jsdelivr.net/gh/anjumshehzad1/assets@main/Assets/Resume-Matcher.jpg" alt="Reload"></div>
+                    <div class="project-content">
+                        <h5 class="project-title">Smart Resume Analyzer</h5>
+                        <p class="project-description">Real-time artifical intelligence platform for resume analyzer
+                            with interactive UI, predictive analytics and multiple modules.</p>
+                    </div>
+                </div>
+                <div class="scroll-item">
+                    <div class="project-image"><img
+                            src="https://cdn.jsdelivr.net/gh/anjumshehzad1/assets@main/Assets/Nest.js.jpg" alt="Reload"></div>
+                    <div class="project-content">
+                        <h5 class="project-title">E-Commerce - Nest.js</h5>
+                        <p class="project-description">A E-Commerce platform with strong backend logic using Nest.js,
+                            TypeScript,PrismaORM, JWTAuth, and TailwindCSS.</p>
+                    </div>
+                </div>
+
+                <div class="scroll-item">
+                    <div class="project-image"><img
+                            src="https://cdn.jsdelivr.net/gh/anjumshehzad1/assets@main/Assets/UI&UX.jpg" alt=""></div>
+                    <div class="project-content">
+                        <h5 class="project-title">Dashboard - Figma</h5>
+                        <p class="project-description">An AI-powered dynamic noticeboard designed to automate the
+                            creation and display of event flyers from calendar data, aiming to reduce manual effort and
+                            improve campus communication.</p>
+                    </div>
+                </div>
+
+                <div class="scroll-item">
+                    <div class="project-image"><img
+                            src="https://cdn.jsdelivr.net/gh/anjumshehzad1/assets@main/Assets/Graphic-Designer.jpg" alt=""></div>
+                    <div class="project-content">
+                        <h5 class="project-title">Graphic Design</h5>
+                        <p class="project-description">Sample of some of the work, overall logos, flyers, brochures,
+                            social-media posts, posters and business cards</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Domains Section -->
+    <section id="domains" class="section">
+        <div class="container">
+            <h2 class="section-title">Our Expertise Domains</h2>
+            <div class="domain-grid">
+                <div class="domain-item">
+                    <div class="domain-icon"><i class="fas fa-globe"></i></div>
+                    <div class="domain-name">Web Development</div>
+                </div>
+                <div class="domain-item">
+                    <div class="domain-icon"><i class="fas fa-eye"></i></div>
+                    <div class="domain-name">Computer Vision</div>
+                </div>
+
+                <div class="domain-item">
+                    <div class="domain-icon"><i class="fab fa-react"></i></div>
+                    <div class="domain-name">MERN Stack</div>
+                </div>
+                <div class="domain-item">
+                    <div class="domain-icon"><i class="fas fa-brain"></i></div>
+                    <div class="domain-name">AI/ML</div>
+                </div>
+                <div class="domain-item">
+                    <div class="domain-icon"><i class="fas fa-link"></i></div>
+                    <div class="domain-name">Blockchain</div>
+                </div>
+                <div class="domain-item">
+                    <div class="domain-icon"><i class="fas fa-code"></i></div>
+                    <div class="domain-name">API Integration</div>
+                </div>
+
+                <div class="domain-item">
+                    <div class="domain-icon"><i class="fab fa-shopify"></i></div>
+                    <div class="domain-name">Shopify</div>
+                </div>
+                <div class="domain-item">
+                    <div class="domain-icon"><i class="fab fa-wordpress"></i></div>
+                    <div class="domain-name">WordPress</div>
+                </div>
+                <div class="domain-item">
+                    <div class="domain-icon"><i class="fas fa-server"></i></div>
+                    <div class="domain-name">Nest.js</div>
+                </div>
+                <div class="domain-item">
+                    <div class="domain-icon"><i class="fas fa-palette"></i></div>
+                    <div class="domain-name">UI/UX Design</div>
+                </div>
+                <div class="domain-item">
+                    <div class="domain-icon"><i class="fas fa-paint-brush"></i></div>
+                    <div class="domain-name">Graphic Design</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="contact-options">
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <a href="https://www.linkedin.com/company/ash-tech-virtual-software-house/ "
+                                    target="_blank" class="contact-card linkedin">
+                                    <div class="contact-icon">
+                                        <i class="fab fa-linkedin"></i>
+                                    </div>
+                                    <h4>LinkedIn</h4>
+                                    <p>Connect with us professionally</p>
+                                </a>
+                            </div>
+                            <div class="col-md-6">
+                                <a href="tel:+923157692998" class="contact-card call">
+                                    <div class="contact-icon">
+                                        <i class="fas fa-phone"></i>
+                                    </div>
+                                    <h4>Call Us</h4>
+                                    <p>+92 315 76 92998</p>
+                                </a>
+                            </div>
+                            <div class="col-md-6">
+                                <a href="https://wa.me/923157692998" target="_blank" class="contact-card whatsapp">
+                                    <div class="contact-icon">
+                                        <i class="fab fa-whatsapp"></i>
+                                    </div>
+                                    <h4>WhatsApp</h4>
+                                    <p>Chat with us instantly</p>
+                                </a>
+                            </div>
+                            <div class="col-md-6">
+                                <a href="mailto:shehzadaashan@gmail.com" class="contact-card gmail">
+                                    <div class="contact-icon">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+                                    <h4>Email</h4>
+                                    <p>shehzadaashan@gmail.com</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h3><img class="logo-img-footer" src="https://cdn.jsdelivr.net/gh/anjumshehzad1/assets@main/Assets/logo.jpg" alt="logo"></h3>
+                    <p class="text">Transforming ideas into digital reality. Your trusted partner for innovative
+                        software solutions.</p>
+                </div>
+                <div class="col-lg-6 text-lg-end">
+                    <!--<div class="social-links">
+                        <a href="https://www.linkedin.com/company/ash-tech-virtual-software-house/ " target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://twitter.com/ashtech" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://github.com/ashtech" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://instagram.com/ashtech" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://facebook.com/ashtech" target="_blank"><i class="fab fa-facebook"></i></a>
+                    </div>-->
+                    <img class="business-card" src="https://cdn.jsdelivr.net/gh/anjumshehzad1/assets@main/Assets/card.jpg" alt="Business Card">
+
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
