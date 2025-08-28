@@ -1271,23 +1271,30 @@
             line-height: 1.6;
         }
 
-        .business-card-container {
-            text-align: center;
-        }
+     
+.footer-social {
+  margin-top: 1rem;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
 
-        .business-card {
-            max-width: 100%;
-            height: auto;
-            border-radius: 16px;
-            border: 2px solid var(--border-color);
-            transition: all 0.3s ease;
-        }
+.footer-social a {
+  font-size: 1.8rem;
+  transition: transform 0.3s ease;
+}
 
-        .business-card:hover {
-            transform: scale(1.02);
-            border-color: var(--primary);
-            box-shadow: var(--shadow-primary);
-        }
+.footer-social a:hover {
+  transform: scale(1.2);
+}
+
+/* Brand Colors */
+.footer-social a.youtube { color: #FF0000; }
+.footer-social a.facebook { color: #1877F2; }
+.footer-social a.instagram { 
+  color: #E1306C; 
+}
+.footer-social a.linkedin { color: #0A66C2; }
 
         .footer-bottom {
             text-align: center;
@@ -2250,29 +2257,41 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
-                        <img class="logo-img"
-                            src="https://cdn.jsdelivr.net/gh/anjumshehzad1/assets@main/Assets/logo.jpg" alt="ASH TECH">
-                        <h3>ASH TECH</h3>
-                    </div>
-                    <p>Transforming ideas into digital reality. We're passionate about creating innovative software
-                        solutions that empower businesses and enhance user experiences in the digital age.</p>
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                    <img class="logo-img"
+                        src="https://cdn.jsdelivr.net/gh/anjumshehzad1/assets@main/Assets/logo.jpg" alt="ASH TECH">
+                    <h3>ASH TECH</h3>
                 </div>
-                <div class="business-card-container">
-                    <img class="business-card"
-                        src="https://cdn.jsdelivr.net/gh/anjumshehzad1/assets@main/Assets/card.jpg"
-                        alt="ASH TECH Business Card">
-                </div>
+                <p>Transforming ideas into digital reality. We're passionate about creating innovative software
+                    solutions that empower businesses and enhance user experiences in the digital age.</p>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 ASH TECH. All rights reserved. Built with passion and cutting-edge technology.</p>
+
+            <!-- Social Media Icons -->
+            <div class="footer-social">
+                <a href="https://youtube.com/@ashtechit" target="_blank" aria-label="YouTube" class="youtube">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=61579724319475" target="_blank" aria-label="Facebook" class="facebook">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="https://www.instagram.com/ashtech.it" target="_blank" aria-label="Instagram" class="instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.linkedin.com/company/ash-tech-virtual-software-house/" target="_blank" aria-label="LinkedIn" class="linkedin">
+                    <i class="fab fa-linkedin"></i>
+                </a>
             </div>
         </div>
-    </footer>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 ASH TECH. All rights reserved. Built with passion and cutting-edge technology.</p>
+        </div>
+    </div>
+</footer>
 
     <!-- Scroll to Top Button -->
     <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
@@ -2512,6 +2531,7 @@
 </body>
 
 </html>
+
 
 
 
